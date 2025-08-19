@@ -37,11 +37,6 @@ public class UserService {
         if(userRequestPojo.getEmail() !=null && !userRequestPojo.getEmail().contains("@")){
             return "email is not valid";
         }
-        if(userRequestPojo.getAge() < 10){
-            return "Age must be at least 10";
-        }else if(userRequestPojo.getAge() > 100){
-            return "Age must be at most 100";
-        }
         user.setCreatedAt(new Date());
         userRepository.createUser(user);
 

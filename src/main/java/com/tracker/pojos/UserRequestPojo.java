@@ -5,7 +5,6 @@ public class UserRequestPojo {
     private String username;
     private String password;
     private String email;
-    private Integer age;
 
     public String getUsername() {
         return username;
@@ -29,13 +28,5 @@ public class UserRequestPojo {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
     }
 }

@@ -23,6 +23,7 @@ public class UserService {
     }
 
 
+    // it is for creating a new user
     public String createUser(UserRequestPojo userRequestPojo){
 
         User user = new User();

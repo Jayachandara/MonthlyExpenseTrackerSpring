@@ -12,18 +12,16 @@ import org.springframework.transaction.annotation.Transactional;
 // and if any stereotype annotation it identifies
 //then it will consider as bean(spring level object)
 //and creat beans and store it in spring IOC container
-@Repository
 //JPA with hibernate
 //It is the communication medium between database and our java application
-// Service, Controller endpoint(getMapping)
+@Repository
 public class UserRepository {
 
     //JPA-> Java persistence API
     // it will provide specification for any ORM tool
-    //Specification JPA -> we are tighly coupled with JPA not hibernate ORM
+    //Specification JPA -> we are tightly coupled with JPA not hibernate ORM
     // Implementation -> Hibernate
     //JPA with hibernate and other ORM frameworks
-    //Hibernate -> Session
 
 
     @PersistenceContext
@@ -55,7 +53,6 @@ public class UserRepository {
         return user;
     }
 
-    //JDBC
     @Transactional
     public void createUser(User user){
          entityManager.persist(user);

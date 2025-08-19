@@ -4,16 +4,6 @@ import jakarta.persistence.*;
 
 import java.util.Date;
 
-
-/*CREATE TABLE users (
-        user_id INT PRIMARY KEY AUTO_INCREMENT,
-        name VARCHAR(100),
-email VARCHAR(100) UNIQUE,
-password_hash TEXT,
-created_at DATETIME DEFAULT CURRENT_TIMESTAMP
-);*/
-
-//plain pojo
 @Entity
 @Table(name="users")
 public class User {

@@ -6,6 +6,8 @@ import jakarta.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.logging.Logger;
+
 //Controller, Service, Repository, Component
 
 //On run time spring will scan all the classes in the base package
@@ -49,10 +51,18 @@ public class UserRepository {
         //if we want to fetch record based on name
         //HQL -> hibernate internally converts this into native query (MySQL)
         // select * from users where user_name = 'Jay';
-        User user = entityManager.createQuery("select u from User u where u.userName = :userName",User.class)
-                .setParameter("userName", userName).getSingleResult();
+        try {
 
-        return user;
+            User user = entityManager.createQuery("select u from User u where u.userName = :userName",User.class)
+                    .setParameter("userName", userName).getSingleResult();
+
+            return user;
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+
+        return null;
     }
 
     //JDBC

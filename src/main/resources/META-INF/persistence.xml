@@ -5,13 +5,13 @@
        <!-- <class>com.example.model.User</class>-->
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
-            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/your_db_name"/>
-            <property name="jakarta.persistence.jdbc.user" value="your_username"/>
-            <property name="jakarta.persistence.jdbc.password" value="your_password"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/mydb"/>
+            <property name="jakarta.persistence.jdbc.user" value="root"/>
+            <property name="jakarta.persistence.jdbc.password" value="Chandu@69"/>
 
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
-            <!--<property name="hibernate.hbm2ddl.auto" value="update"/>-->
-            <!--<property name="hibernate.show_sql" value="false"/>-->
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.show_sql" value="true"/>
         </properties>
     </persistence-unit>
 </persistence>

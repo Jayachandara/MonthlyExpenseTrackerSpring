@@ -27,7 +27,7 @@ public class UserService {
     public String createUser(UserRequestPojo userRequestPojo){
 
         User user = new User();
-        user.setUsername(userRequestPojo.getUsername());
+        user.setUserName(userRequestPojo.getUsername());
         if(userRequestPojo.getPassword()==null || userRequestPojo.getPassword().equals("")){
             return "password is empty";
         } else if (userRequestPojo.getPassword().contains(".")) {

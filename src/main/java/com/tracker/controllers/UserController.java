@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 //it should return json
 
 //Controller(it will communicate with frontend) <--- Service(it will contain business logic) ---> Repository -> it should communicate with database
+@RequestMapping("users/")
 public class UserController {
 
     @Autowired
@@ -20,23 +21,26 @@ public class UserController {
     //get method, get, post, put,delete
 
     //endpoint
-    @GetMapping("users/get-user-by-id/{ID}")
-    public User getUser(@PathVariable Integer ID)
+    @GetMapping("get-user-by-id/{id}")
+    public User getUser(@PathVariable("id") Integer id)
     {
-        return userService.getUserById(ID);
+        System.out.println("id = " + id);
+        return userService.getUserById(id);
     }
 
-    @GetMapping("users/get-user-by-name/{name}")
-    public User getUser(@PathVariable String name)
+    @GetMapping("get-user-by-name/{name}")
+    public User getUser(@PathVariable("name") String name)
     {
         return userService.getUserByName(name);
     }
 
     //We mayu encounter with maintainance issues and readability issues
     // we sagregate logic based on the category
-    @PostMapping("users/create-user")
+    @PostMapping("create-user")
     public String createUser(@RequestBody UserRequestPojo userRequestPojo)
     {
+
+        System.out.println("userRequestPojo.toString() = " + userRequestPojo.toString());
         return userService.createUser(userRequestPojo);
     }
 
